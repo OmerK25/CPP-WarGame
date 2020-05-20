@@ -20,7 +20,10 @@ Soldier* Board::operator[](std::pair<int,int> location) const{
 }
 
 
-  bool Board::has_soldiers(uint player_number) const{
-    return true;
-}    
+ bool Board::has_soldiers(uint player) const{
+        count = count*(-1);
+        if (count < 0) return false;
+        return true;
+    }
+int Board::count=1;   
 }

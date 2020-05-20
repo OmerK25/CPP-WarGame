@@ -16,6 +16,8 @@ namespace WarGame {
 
 class Board {
   private:
+      static int count; //remove after
+
     std::vector<std::vector<Soldier*>> board;
   public:
     enum MoveDIR { Up, Down, Right, Left };

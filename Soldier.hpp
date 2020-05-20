@@ -16,15 +16,15 @@
         :player(p),loc(l),hp(h),power(pow){} 
 
 //          Get&Set
-    virtual int hp();
-    virtual void set_hp(int new_hp);
+    // virtual int _hp();
+    // virtual void set_hp(int new_hp);
 
-    virtual std::pair<int,int> loc();
-    virtual void set_loc (std::pair<int,int> new_loc);
+    // virtual std::pair<int,int> _loc();
+    // virtual void set_loc (std::pair<int,int> new_loc);
     
-    virtual int player();
-    virtual void set_player (int new_player);
+    // virtual int _player();
+    // virtual void set_player (int new_player);
 
-    virtual int power();
-    virtual void set_power(int new_power);
+    // virtual int _power();
+    // virtual void set_power(int new_power);
     };
