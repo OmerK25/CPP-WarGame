@@ -1,3 +1,3 @@
 
 #include "Paramedic.hpp"
-void Paramedic::act (){}
+void Paramedic::act (vector<vector<Soldier *>> &board, pair<int, int> location){}

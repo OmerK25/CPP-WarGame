@@ -1,19 +1,23 @@
 #include "Board.hpp"
+#include <map>
+
 using namespace std;
 namespace WarGame
 {
+        std::map<int, int> m;
 
         //Set a place on the board with soldier
         Soldier *&Board::operator[](std::pair<int, int> location)
         {
-
-                return board[0][0];
+                Soldier *&temp = (this->board[location.first][location.second]);
+                // m[temp->_player()]++;
+                return temp;
         }
 
         //get a soldier from a place on the board.
         Soldier *Board::operator[](std::pair<int, int> location) const
         {
-                return board[0][0];
+                return this->board[location.first][location.second];
         }
 
         void Board::move(uint player_number, std::pair<int, int> source, MoveDIR direction)
@@ -58,6 +62,11 @@ namespace WarGame
 
         bool Board::has_soldiers(uint player) const
         {
+                // if (m[player] != 0)
+                // {
+                //         return true;
+                // }
+                //         return false;
                 count = count * (-1);
                 if (count < 0)
                         return false;

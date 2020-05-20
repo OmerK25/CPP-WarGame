@@ -1,3 +1,3 @@
 #include "SniperCommander.hpp"
-void SniperCommander::act (){}
-void SniperCommander::act_all (){}
+void SniperCommander::act (vector<vector<Soldier *>> &board, pair<int, int> location){}
+void SniperCommander::act_as_commander (vector<vector<Soldier *>> &board, pair<int, int> location){}
