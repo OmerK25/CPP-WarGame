@@ -1,11 +1,30 @@
-namespace WarGame {
+#pragma once
+#include <stdexcept>
+
     class Soldier{
         private:
-        int hp; // health points
-        int power; //heal or damage
+        int player; //player number.
+        int hp; // health points.
+        int power; //amount of power of his act; heal or damage.
+        std::pair<int,int> loc;// current position on the board.
 
-move(); //change pos in the board
-act();//git or heal, depends on the soldier type
+        public:
+    virtual void act () {};
 
-    }
-}
+//          full constructor
+   Soldier(int p, std::pair<int,int> l,int h,int pow)
+        :player(p),loc(l),hp(h),power(pow){} 
+
+//          Get&Set
+    virtual int hp();
+    virtual void set_hp(int new_hp);
+
+    virtual std::pair<int,int> loc();
+    virtual void set_loc (std::pair<int,int> new_loc);
+    
+    virtual int player();
+    virtual void set_player (int new_player);
+
+    virtual int power();
+    virtual void set_power(int new_power);
+    };
