@@ -9,9 +9,8 @@ namespace WarGame
         //Set a place on the board with soldier
         Soldier *&Board::operator[](std::pair<int, int> location)
         {
-                Soldier *&temp = (this->board[location.first][location.second]);
+                return this->board[location.first][location.second];
                 // m[temp->_player()]++;
-                return temp;
         }
 
         //get a soldier from a place on the board.
@@ -58,19 +57,23 @@ namespace WarGame
                 }
                 (*this)[dest] = mover;
                 (*this)[source] = nullptr;
+                mover->act(this->board, dest);
         }
 
         bool Board::has_soldiers(uint player) const
         {
-                // if (m[player] != 0)
-                // {
-                //         return true;
-                // }
-                //         return false;
-                count = count * (-1);
-                if (count < 0)
-                        return false;
-                return true;
+                for (int i = 0; i < board.size(); i++)
+                {
+                        for (int j = 0; j < board[i].size(); j++)
+                        {
+                                Soldier *check = this->board[i][j];
+                                if (check != nullptr)
+                                {
+                                        if (check->_player() == player)
+                                                return true;
+                                }
+                        }
+                }
+                return false;
         }
-        int Board::count = 1;
 } // namespace WarGame
