@@ -3,6 +3,8 @@
 #include <iostream>
 void FootCommander::act(vector<vector<Soldier *>> &board, pair<int, int> location)
 {
+    FootSoldier::act(board, location);
+    act_as_commander(board, location);
 }
 void FootCommander::act_as_commander(vector<vector<Soldier *>> &board, pair<int, int> location)
 {
@@ -11,8 +13,12 @@ void FootCommander::act_as_commander(vector<vector<Soldier *>> &board, pair<int,
         for (int j = 0; j < board[i].size(); j++)
         {
             Soldier *maybeFoot = board[i][j];
-            if (typeid(*maybeFoot) == typeid(FootSoldier))
-                maybeFoot->act(board, location);
+            if (maybeFoot != nullptr && maybeFoot->_player() == _player())
+            {
+                if (dynamic_cast<FootSoldier *>(maybeFoot) && !(dynamic_cast<FootCommander *>(maybeFoot)))
+                    maybeFoot->act(board, {i, j});
+            }
         }
     }
 }
+

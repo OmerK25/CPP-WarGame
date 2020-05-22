@@ -1,4 +1,6 @@
+#pragma once
 #include "FootSoldier.hpp"
+
 
 class FootCommander : public FootSoldier
 {

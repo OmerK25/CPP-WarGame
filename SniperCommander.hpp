@@ -1,10 +1,8 @@
+#pragma once
 #include "Sniper.hpp"
-#include <vector>
 
 class SniperCommander : public Sniper
 {
-    vector<Sniper *> mySoldiers; //The soldiers thats belong to him.
-    vector<Sniper *>::iterator it;
 
 public:
     SniperCommander(int g) : Soldier(g, 150, 20) {}

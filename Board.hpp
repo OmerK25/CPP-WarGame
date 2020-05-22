@@ -17,8 +17,6 @@ namespace WarGame
   class Board
   {
   private:
-    static int count; //remove after
-
     std::vector<std::vector<Soldier *>> board;
 
   public:
@@ -31,6 +29,10 @@ namespace WarGame
     };
 
     Board(uint numRows, uint numCols) : board(numRows, std::vector<Soldier *>(numCols, nullptr)) {}
+
+    // ~Board()
+    // {
+    // }
 
     // operator for putting soldiers on the game-board during initialization.
     Soldier *&operator[](std::pair<int, int> location);

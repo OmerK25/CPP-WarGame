@@ -1,3 +1,4 @@
+#pragma once
 #include "Soldier.hpp"
 
 class Sniper : public virtual Soldier {

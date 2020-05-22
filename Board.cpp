@@ -10,7 +10,6 @@ namespace WarGame
         Soldier *&Board::operator[](std::pair<int, int> location)
         {
                 return this->board[location.first][location.second];
-                // m[temp->_player()]++;
         }
 
         //get a soldier from a place on the board.
@@ -50,6 +49,9 @@ namespace WarGame
                         dest.second = source.second;
                         break;
                 }
+                //Out of the board
+        if (dest.first >= board.size() || dest.first < 0 || dest.second >= board[0].size() || dest.second < 0)
+            throw invalid_argument("Out of the board");
 
                 if ((*this)[dest] != nullptr)
                 {

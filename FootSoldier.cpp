@@ -11,8 +11,9 @@ float distance(pair<int, int> location1, pair<int, int> location2)
 
 void FootSoldier::act(vector<vector<Soldier *>> &board, pair<int, int> location)
 {
-    Soldier *victim;
-    float min = 100000;
+    Soldier *victim = nullptr;
+    float min = distance({0,0},{board.size(),board[0].size()});
+    int row, col;
     for (int i = 0; i < board.size(); i++)
     {
         for (int j = 0; j < board[i].size(); j++)
@@ -27,14 +28,20 @@ void FootSoldier::act(vector<vector<Soldier *>> &board, pair<int, int> location)
                 {
                     min = distance(location, tempLoc);
                     victim = temp;
+                    row = i;
+                    col = j;
                 }
             }
         }
     }
+    if(victim != nullptr){
     victim->set_hp(victim->_hp() - this->_power());
     if (victim->_hp() <= 0)
     {
+        delete board[row][col];
+        board[row][col] = nullptr;
         victim = nullptr;
+    }
     }
 }
 

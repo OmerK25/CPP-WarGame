@@ -17,6 +17,10 @@ public:
     Soldier(int p, int h, int pow)
         : player(p), hp(h), max_hp(h), power(pow) {}
 
+    ~Soldier(){
+    
+    }
+
     //          Get&Set
     virtual int _hp()
     {
