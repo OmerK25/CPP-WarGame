@@ -30,9 +30,17 @@ namespace WarGame
 
     Board(uint numRows, uint numCols) : board(numRows, std::vector<Soldier *>(numCols, nullptr)) {}
 
-    // ~Board()
-    // {
-    // }
+    ~Board()
+    {
+      for (int i = 0; i < board.size(); i++)
+      {
+        for (int j = 0; j < board[i].size(); j++)
+        {
+          delete this->board[i][j];
+          this->board[i][j] = nullptr;
+        }
+      }
+    }
 
     // operator for putting soldiers on the game-board during initialization.
     Soldier *&operator[](std::pair<int, int> location);

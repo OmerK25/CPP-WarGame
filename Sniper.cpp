@@ -29,7 +29,6 @@ void Sniper::act(vector<vector<Soldier *>> &board, pair<int, int> location)
         {
             delete board[row][col];
             board[row][col] = nullptr;
-            victim = nullptr;
         }
     }
 }

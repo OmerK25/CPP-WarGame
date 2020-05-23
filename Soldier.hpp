@@ -1,4 +1,5 @@
 #pragma once
+
 #include <stdexcept>
 #include <vector>
 using namespace std;
@@ -17,7 +18,7 @@ public:
     Soldier(int p, int h, int pow)
         : player(p), hp(h), max_hp(h), power(pow) {}
 
-    ~Soldier(){
+   virtual ~Soldier(){
     
     }
 

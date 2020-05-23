@@ -50,13 +50,14 @@ namespace WarGame
                         break;
                 }
                 //Out of the board
-        if (dest.first >= board.size() || dest.first < 0 || dest.second >= board[0].size() || dest.second < 0)
-            throw invalid_argument("Out of the board");
+                if (dest.first >= board.size() || dest.first < 0 || dest.second >= board[0].size() || dest.second < 0)
+                        throw invalid_argument("Out of the board");
 
                 if ((*this)[dest] != nullptr)
                 {
                         throw runtime_error("Dest has a soldier already");
                 }
+
                 (*this)[dest] = mover;
                 (*this)[source] = nullptr;
                 mover->act(this->board, dest);
