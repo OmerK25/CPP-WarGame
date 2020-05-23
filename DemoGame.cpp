@@ -53,8 +53,6 @@ namespace WarGame
 		if (!board.has_soldiers(1))
 			return 2;
 
-		if (board.has_soldiers(1) && board.has_soldiers(2))
-			return -1;
 		/// Write more moves here..
 
 		// If no player won, return "tie":
