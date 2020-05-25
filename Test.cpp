@@ -48,6 +48,16 @@ TEST_CASE("SIMPLE 3x3 GAME ")
 
     CHECK(board.has_soldiers(2));
     CHECK(board.has_soldiers(1));
+
+    for (int i = 0; i < 3; ++i)
+    {
+        for (int j = 0; j < 3; ++j)
+        {
+            Soldier *soldier = board[{i, j}];
+            if (soldier)
+                delete soldier;
+        }
+    }
 }
 
 TEST_CASE("6x6 GAME with comanders ")
@@ -72,6 +82,16 @@ TEST_CASE("6x6 GAME with comanders ")
     board[{5, 3}] = new FootSoldier(2);
     board[{5, 5}] = new FootSoldier(2);
     CHECK(board.has_soldiers(2));
+
+    for (int i = 0; i < 6; ++i)
+    {
+        for (int j = 0; j < 6; ++j)
+        {
+            Soldier *soldier = board[{i, j}];
+            if (soldier)
+                delete soldier;
+        }
+    }
 }
 
 TEST_CASE("12x12 GAME with comanders ")
@@ -107,6 +127,16 @@ TEST_CASE("12x12 GAME with comanders ")
             CHECK(board.has_soldiers(1));
         }
     }
+
+    for (int i = 0; i < 12; ++i)
+    {
+        for (int j = 0; j < 12; ++j)
+        {
+            Soldier *soldier = board[{i, j}];
+            if (soldier)
+                delete soldier;
+        }
+    }
 }
 
 TEST_CASE("8x8 GAME with comanders ")
@@ -136,6 +166,16 @@ TEST_CASE("8x8 GAME with comanders ")
     {
         CHECK(true);
     }
+
+    for (int i = 0; i < 8; ++i)
+    {
+        for (int j = 0; j < 8; ++j)
+        {
+            Soldier *soldier = board[{i, j}];
+            if (soldier)
+                delete soldier;
+        }
+    }
 }
 
 TEST_CASE("2x2 GAME with comanders ")
@@ -149,5 +189,14 @@ TEST_CASE("2x2 GAME with comanders ")
 
     board[{1, 1}] = new FootSoldier(2);
     CHECK(board.has_soldiers(2));
-}
 
+    for (int i = 0; i < 2; ++i)
+    {
+        for (int j = 0; j < 2; ++j)
+        {
+            Soldier *soldier = board[{i, j}];
+            if (soldier)
+                delete soldier;
+        }
+    }
+}
