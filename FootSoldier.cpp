@@ -38,7 +38,6 @@ void FootSoldier::act(vector<vector<Soldier *>> &board, pair<int, int> location)
     victim->set_hp(victim->_hp() - this->_power());
     if (victim->_hp() <= 0)
     {
-        delete board[row][col];
         board[row][col] = nullptr;
     }
     }
