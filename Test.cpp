@@ -162,10 +162,10 @@ TEST_CASE("8x8 GAME with comanders ")
     board[{5, 3}] = new FootSoldier(2);
     board[{5, 5}] = new FootSoldier(2);
     CHECK(board.has_soldiers(2));
-    for (int i = 0; i < 73; i++)
-    {
-        CHECK(true);
-    }
+    // for (int i = 0; i < 73; i++)
+    // {
+    //     CHECK(true);
+    // }
 
     for (int i = 0; i < 8; ++i)
     {
